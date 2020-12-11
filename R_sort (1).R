@@ -2,15 +2,15 @@ library(tidyverse)
 library(ramify)
 library(ggplot2)
 # Reading in the trait data ========================
-Traits_1 <- read_csv("OriginList.csv")%>%
+Traits_1 <- read_csv("data/OriginList.csv")%>%
   dplyr::select(`species name`, "status")%>%
-  left_join(x = read_tsv("11649_09092020235128/11649.txt"), y = ., by = c("SpeciesName" = "species name") )
-Traits_2 <- read_csv("OriginList.csv")%>%
+  left_join(x = read_tsv("data/11649_09092020235128/11649.txt"), y = ., by = c("SpeciesName" = "species name") )
+Traits_2 <- read_csv("data/OriginList.csv")%>%
   dplyr::select(`species name`, "status")%>%
-  left_join(x = read_tsv("11650_10092020002935/11650.txt"), y = ., by = c("SpeciesName" = "species name") )
-Traits_3 <- read_csv("OriginList.csv")%>%
+  left_join(x = read_tsv("data/11650_10092020002935/11650.txt"), y = ., by = c("SpeciesName" = "species name") )
+Traits_3 <- read_csv("data/OriginList.csv")%>%
   dplyr::select(`species name`, "status")%>%
-  left_join(x = read_tsv("11651_10092020010204/11651.txt"), y = ., by = c("SpeciesName" = "species name") )
+  left_join(x = read_tsv("data/11651_10092020010204/11651.txt"), y = ., by = c("SpeciesName" = "species name") )
 
 #Combining the trait data and pairing it with fire prone ==================
 Traits_f <- rbind(Traits_1, Traits_2, Traits_3)
